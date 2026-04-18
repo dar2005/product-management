@@ -29,6 +29,10 @@ export class SearchProductComponent implements OnInit {
     this.applyFilter();
   }
 
+  get noProductsFound(): boolean {
+    return this.searchText.trim().length > 0 && this.filteredProducts.length === 0;
+  }
+
   private applyFilter(): void {
     if (this.searchText.trim() === '') {
       this.filteredProducts = this.products;

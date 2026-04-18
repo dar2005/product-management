@@ -19,7 +19,11 @@
 
       <h3 class="h4 fw-bold mb-3">Product List</h3>
 
-      <div class="table-responsive">
+      <div *ngIf="noProductsFound" class="alert alert-warning" role="alert">
+        Product not found.
+      </div>
+
+      <div class="table-responsive" *ngIf="filteredProducts.length > 0">
         <table class="table table-bordered table-striped table-hover align-middle mb-0">
       <thead>
         <tr class="table-light">
